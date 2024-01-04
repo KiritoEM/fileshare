@@ -1,8 +1,30 @@
-const LoginConnect = () => {
+import React, { useEffect } from "react";
+import { useFirebase } from "../../hooks/useFirebase";
+import { useNavigate } from "react-router-dom";
+
+interface Iauth {
+  authGoogle: () => void;
+  //   authFacebook: () => void;
+}
+
+const LoginConnect: React.FC<Iauth> = ({ authGoogle }): JSX.Element => {
+  const navigate = useNavigate();
+  const { emailSent } = useFirebase();
+  useEffect(() => {
+    if (emailSent) {
+      // navigate(`/upload`)
+      alert(`bienvenue ${emailSent}`);
+    }
+  }, [emailSent]);
   return (
     <section id="login-connect">
       <div className="btn-google">
-        <button className="btn btn-1">
+        <button
+          className="btn btn-1"
+          onClick={() => {
+            authGoogle();
+          }}
+        >
           <div className="img">
             <img src="/google.png" alt="" />
           </div>

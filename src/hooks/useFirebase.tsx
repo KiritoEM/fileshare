@@ -13,6 +13,7 @@ interface IAuthProvider {
   children?: ReactNode;
 }
 
+//create firebase context
 const FirebaseContext = createContext<IFirebaseContext | null>(null);
 
 export const FirebaseProvider: React.FC<IAuthProvider> = ({ children }) => {
@@ -56,6 +57,7 @@ export const FirebaseProvider: React.FC<IAuthProvider> = ({ children }) => {
 };
 
 //hooks exportation
+// eslint-disable-next-line react-refresh/only-export-components
 export const useFirebase = () => {
   const context = useContext(FirebaseContext);
 
