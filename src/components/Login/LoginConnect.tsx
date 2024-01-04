@@ -4,14 +4,17 @@ import { useNavigate } from "react-router-dom";
 
 interface Iauth {
   authGoogle: () => void;
-  //   authFacebook: () => void;
+  authFacebook: () => void;
 }
 
-const LoginConnect: React.FC<Iauth> = ({ authGoogle }): JSX.Element => {
+const LoginConnect: React.FC<Iauth> = ({
+  authGoogle,
+  authFacebook,
+}): JSX.Element => {
   const navigate = useNavigate();
-  const { emailSent } = useFirebase();
+  const { emailSent, usernameSent } = useFirebase();
   useEffect(() => {
-    if (emailSent) {
+    if (emailSent || usernameSent) {
       // navigate(`/upload`)
       alert(`bienvenue ${emailSent}`);
     }
@@ -32,7 +35,12 @@ const LoginConnect: React.FC<Iauth> = ({ authGoogle }): JSX.Element => {
         </button>
       </div>
       <div className="btn-google">
-        <button className="btn btn-2">
+        <button
+          className="btn btn-2"
+          onClick={() => {
+            authFacebook();
+          }}
+        >
           <div className="img">
             <img src="/facebook.png" alt="" />
           </div>

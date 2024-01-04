@@ -3,7 +3,7 @@ import LoginHeader from "../components/Login/LoginHeader";
 import { useFirebase } from "../hooks/useFirebase";
 
 const Login = (): JSX.Element => {
-  const { setGooglePopup } = useFirebase();
+  const { setGooglePopup, setFacebookPopup } = useFirebase();
 
   return (
     <section id="login-page">
@@ -12,7 +12,10 @@ const Login = (): JSX.Element => {
       </div>
       <div className="login-container">
         <LoginHeader />
-        <LoginConnect authGoogle={setGooglePopup} />
+        <LoginConnect
+          authGoogle={setGooglePopup}
+          authFacebook={setFacebookPopup}
+        />
       </div>
       <div className="cloud-right">
         <img src="/cloud-right.png" alt="" />
