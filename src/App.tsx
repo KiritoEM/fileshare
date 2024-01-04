@@ -1,11 +1,13 @@
+import { Fragment } from "react";
 import Login from "./pages/Login";
 import "./styles/index.scss";
+import AppRoutes from "./routes/AppRoutes";
 
 const App = (): JSX.Element => {
   return (
-    <section id="main">
-      <Login />
-    </section>
+    <Fragment>
+      <AppRoutes />
+    </Fragment>
   );
 };
 
