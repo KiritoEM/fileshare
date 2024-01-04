@@ -18,7 +18,7 @@ const LoginConnect: React.FC<Iauth> = ({
       // navigate(`/upload`)
       alert(`bienvenue ${emailSent}`);
     }
-  }, [emailSent]);
+  }, [emailSent, usernameSent]);
   return (
     <section id="login-connect">
       <div className="btn-google">

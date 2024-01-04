@@ -7,6 +7,9 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Ignore le fichier de configuration Firebase dans /src/config/
+/src/config/config.json
+
 node_modules
 dist
 dist-ssr

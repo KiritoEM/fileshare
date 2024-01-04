@@ -1,13 +1,16 @@
 $primary : #E28904;
 $secondary-1 : #3C3838;
+$secondary-2 :#928C8C;
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Kanit', sans-serif;
+    list-style: none;
+    text-decoration: none;
 }
 
-body{
+body {
     background-color: #FBFBFB;
 }
