@@ -1,0 +1,39 @@
+#login-connect {
+    display: flex;
+    flex-direction: column;
+    gap: 33px;
+    margin-top: 18.5px;
+    padding-left: 27%;
+    padding-right: 27%;
+
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+        padding-top: 12px;
+        padding-bottom: 12px;
+
+        .img {
+
+            img {
+                width: 33px;
+                object-fit: contain;
+            }
+        }
+    }
+
+    .btn-1 {
+        background-color: $primary;
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .btn-2 {
+        border: 2px solid $primary;
+        color: $secondary-1;
+        font-weight: 600;
+        background-color: #FBFBFB;
+    }
+}
