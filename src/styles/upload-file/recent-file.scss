@@ -15,29 +15,33 @@
             }
         }
 
-        .line_after{
-            width: 45px;
+        .line_after {
+            width: 37px;
             height: 3px;
             background-color: $primary;
             margin-top: -3px;
         }
     }
 
-    &__container{
+    &__container {
         width: 100%;
         margin-top: 25px;
     }
 
-    .all-files{
+    .all-files {
         margin-top: 50px;
         text-align: center;
 
-         .btn{
+        .btn {
             background-color: $primary;
             color: #fff;
             border-radius: 32px;
             font-weight: 600;
             padding: 8.6px 60px;
-         }
+        }
+    }
+
+    .vide {
+        color: $secondary-2;
     }
 }

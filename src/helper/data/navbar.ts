@@ -6,7 +6,7 @@ interface InavItems {
 export default function navbar() {
   const navItems: InavItems[] = [
     { label: "Ajouter un Fichier", url: "/upload-file" },
-    { label: "Mes Fichier", url: "/All-file" },
+    { label: "Tous les fichiers", url: "/All-file" },
   ];
 
   return { navItems };

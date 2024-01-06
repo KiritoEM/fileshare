@@ -3,11 +3,13 @@ import FilePreviewCard from "../ChildrenComponents/FilePreviewCard";
 import { useFile } from "../../hooks/useFile";
 import uploadFileHelper from "../../helper/uploadFile.helper";
 ("../../helper/uploadFile.helper");
+import getEmail from "../../util/getEmail";
 
 const UploadArea = (): JSX.Element => {
   const [clicked, setCLicked] = useState<boolean>(false);
   const { file, fileChange } = useFile();
   const { formatFileSize, verifySize, uploadFile } = uploadFileHelper();
+  const userEmail = getEmail();
 
   useEffect(() => {
     if (file) {
@@ -58,7 +60,7 @@ const UploadArea = (): JSX.Element => {
         <div className="button">
           <button
             className="btn"
-            onClick={() => (file ? uploadFile(file) : "")}
+            onClick={() => (file ? uploadFile(file, userEmail) : "")}
           >
             Uploader le fichier
           </button>

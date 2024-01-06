@@ -22,8 +22,11 @@ export default function uploadFileHelper() {
     }
   };
 
-  const uploadFile = (file: File) => {
-    const fileRef = ref(fileStorage, `files_uploaded/${file.name}`);
+  const uploadFile = (file: File, userEmail: string | null) => {
+    const author = userEmail ? userEmail.split("@")[0] : "";
+    const fileName = `${author}_${file.name}`;
+
+    const fileRef = ref(fileStorage, `files_uploaded/${fileName}`);
     uploadBytes(fileRef, file);
   };
 

@@ -18,7 +18,7 @@ const LoginHeader = (): JSX.Element => {
       </div>
       <div className="title">
         <h2>
-          Sauvegarder vos fichiez en ligne grâce à <span>FileShare</span>
+          Partagez vos fichiez en ligne grâce à <span>FileShare</span>
         </h2>
       </div>
     </section>
