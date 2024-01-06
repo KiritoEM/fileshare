@@ -1,7 +1,9 @@
 @import "./upload-file/header.scss";
+@import "./upload-file/upload-area.scss";
+@import "./upload-file/recent-file.scss";
 
 #uploadFile-page {
     width: 100%;
     overflow: hidden;
-    
+    @include container;
 }

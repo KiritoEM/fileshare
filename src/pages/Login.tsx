@@ -1,9 +1,9 @@
 import LoginConnect from "../components/Login/LoginConnect";
 import LoginHeader from "../components/Login/LoginHeader";
-import { useFirebase } from "../hooks/useFirebase";
+import { useAuth } from "../hooks/useAuth";
 
 const Login = (): JSX.Element => {
-  const { setGooglePopup, setFacebookPopup } = useFirebase();
+  const { setGooglePopup, setFacebookPopup } = useAuth();
 
   return (
     <section id="login-page">

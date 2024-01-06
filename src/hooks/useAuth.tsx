@@ -2,12 +2,12 @@ import React, { ReactNode, createContext, useContext, useState } from "react";
 import { auth, provider, facebookProvider } from "../config/firebase-config";
 import { signInWithPopup, signOut } from "firebase/auth";
 
-export interface IFirebaseContext {
+export interface IAuthContext {
   setGooglePopup: () => void;
   setFacebookPopup: () => void;
   setLogout: () => void;
   emailSent: string | null;
-  usernameSent: string | null;
+  // usernameSent: string | null;
   setEmailValue: (email: string | null) => void;
 }
 
@@ -16,11 +16,11 @@ interface IAuthProvider {
 }
 
 //create firebase context
-const FirebaseContext = createContext<IFirebaseContext | null>(null);
+const AuthContext = createContext<IAuthContext | null>(null);
 
-export const FirebaseProvider: React.FC<IAuthProvider> = ({ children }) => {
+export const AuthProvider: React.FC<IAuthProvider> = ({ children }) => {
   const [emailSent, sentEmail] = useState<string | null>("");
-  const [usernameSent, sentUsername] = useState<string | null>("");
+  // const [usernameSent, sentUsername] = useState<string | null>("");
 
   //show Google popup
   const setGooglePopup = () => {
@@ -57,10 +57,10 @@ export const FirebaseProvider: React.FC<IAuthProvider> = ({ children }) => {
   };
 
   return (
-    <FirebaseContext.Provider
+    <AuthContext.Provider
       value={{
         emailSent,
-        usernameSent,
+        // usernameSent,
         setGooglePopup,
         setLogout,
         setEmailValue,
@@ -68,14 +68,14 @@ export const FirebaseProvider: React.FC<IAuthProvider> = ({ children }) => {
       }}
     >
       {children}
-    </FirebaseContext.Provider>
+    </AuthContext.Provider>
   );
 };
 
 //hooks exportation
 // eslint-disable-next-line react-refresh/only-export-components
-export const useFirebase = () => {
-  const context = useContext(FirebaseContext);
+export const useAuth = () => {
+  const context = useContext(AuthContext);
 
   if (!context) {
     throw new Error("useFirebase must be used within an AppProvider");

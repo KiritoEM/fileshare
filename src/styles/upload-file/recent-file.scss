@@ -1,0 +1,25 @@
+#recent-file {
+    margin-top: 5rem;
+    width: 100%;
+
+    &__header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+
+        .title {
+            h4 {
+                color: $primary;
+                font-weight: 600;
+            }
+        }
+
+        .line_after{
+            width: 45px;
+            height: 3px;
+            background-color: $primary;
+            margin-top: -3px;
+        }
+    }
+}

@@ -1,6 +1,6 @@
 import navbar from "../../helper/data/navbar";
 
-const UploadHeader = (): JSX.Element => {
+const AppHeader = (): JSX.Element => {
   const { navItems } = navbar();
   return (
     <section className="upload-header">
@@ -30,4 +30,4 @@ const UploadHeader = (): JSX.Element => {
   );
 };
 
-export default UploadHeader;
+export default AppHeader;

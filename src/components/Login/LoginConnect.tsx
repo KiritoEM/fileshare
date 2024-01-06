@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useFirebase } from "../../hooks/useFirebase";
+import { useAuth } from "../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 
 interface Iauth {
@@ -12,13 +12,13 @@ const LoginConnect: React.FC<Iauth> = ({
   authFacebook,
 }): JSX.Element => {
   const navigate = useNavigate();
-  const { emailSent, usernameSent } = useFirebase();
+  const { emailSent } = useAuth();
   useEffect(() => {
-    if (emailSent || usernameSent) {
-      // navigate(`/upload`)
+    if (emailSent) {
       alert(`bienvenue ${emailSent}`);
+      navigate(`/upload-file`);
     }
-  }, [emailSent, usernameSent]);
+  }, [emailSent, navigate]);
   return (
     <section id="login-connect">
       <div className="btn-google">
