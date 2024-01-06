@@ -1,6 +1,5 @@
 import { ref, uploadBytes } from "firebase/storage";
 import { fileStorage } from "../config/firebase-config";
-import { v4 } from "uuid";
 
 export default function uploadFileHelper() {
   const verifySize = (size: number) => {
@@ -24,7 +23,7 @@ export default function uploadFileHelper() {
   };
 
   const uploadFile = (file: File) => {
-    const fileRef = ref(fileStorage, `files_uploaded/${v4()}`);
+    const fileRef = ref(fileStorage, `files_uploaded/${file.name}`);
     uploadBytes(fileRef, file);
   };
 

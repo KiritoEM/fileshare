@@ -1,8 +1,30 @@
-import React, { ReactNode, createContext, useContext, useState } from "react";
+import React, {
+  ReactNode,
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
+import {
+  getStorage,
+  ref,
+  listAll,
+  getDownloadURL,
+  getMetadata,
+} from "firebase/storage";
+
+interface IfileData {
+  name: string;
+  size: number;
+  type?: string;
+  url: string;
+}
 
 export interface IFileContext {
   file: File | null;
   fileChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  fileArray: IfileData[];
 }
 
 interface IFileProvider {
@@ -13,9 +35,12 @@ const FileContext = createContext<IFileContext | null>(null);
 
 export const FileProvider: React.FC<IFileProvider> = ({ children }) => {
   const [file, setFile] = useState<File | null>(null);
+  const [fileArray, setFiles] = useState<IfileData[]>([]);
+  const storage = getStorage();
+  const storageRef = ref(storage, "files_uploaded");
 
-  if (file) {
-    console.log("fichier uploadé :", file);
+  if (fileArray) {
+    console.log("fichier récupéré :", fileArray);
   }
 
   const fileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -24,11 +49,36 @@ export const FileProvider: React.FC<IFileProvider> = ({ children }) => {
     }
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const fetchFiles = useCallback(async () => {
+    try {
+      const result = await listAll(storageRef);
+      const filePromises = result.items.map(async (item) => {
+        const metadata = await getMetadata(item);
+        const fileSize = metadata.size;
+        const fileType = metadata.contentType;
+        const fileName = item.name;
+        const url = await getDownloadURL(item);
+        return { name: fileName, size: fileSize, type: fileType, url: url };
+      });
+
+      const filesData = await Promise.all(filePromises);
+      setFiles(filesData);
+    } catch (error) {
+      console.error("Erreur lors de la récupération des fichiers :", error);
+    }
+  }, [storageRef]);
+
+  useEffect(() => {
+    fetchFiles();
+  }, []);
+
   return (
     <FileContext.Provider
       value={{
         file,
         fileChange,
+        fileArray,
       }}
     >
       {children}
