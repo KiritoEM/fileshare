@@ -12,7 +12,7 @@ const AppHeader = (): JSX.Element => {
           {navItems.map((item, Navindex) => (
             <li key={Navindex}>
               <a
-                href=""
+                href={item.url}
                 id={window.location.pathname === item.url ? "active" : ""}
               >
                 {item.label}
@@ -22,9 +22,7 @@ const AppHeader = (): JSX.Element => {
         </ul>
       </div>
       <div className="button">
-         <button className="btn">
-              Se déconnecter
-         </button>
+        <button className="btn">Se déconnecter</button>
       </div>
     </section>
   );

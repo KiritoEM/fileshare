@@ -19,15 +19,27 @@ const FileCard = (): JSX.Element => {
           <span>Date de création :</span> 03 Janvier 2023
         </p>
       </div>
-      <div className="delete-btn">
-        <button className="btn btn-danger">
-          <div className="trash-icon">
-            <img src="/trash.png" alt="" />
-          </div>
-          <div className="label">
-            <p>Supprimer</p>
-          </div>
-        </button>
+      <div className="buttons">
+        <div className="delete-btn">
+          <button className="btn btn-danger">
+            <div className="trash-icon">
+              <img src="/trash.png" alt="" />
+            </div>
+            <div className="label">
+              <p>Supprimer</p>
+            </div>
+          </button>
+        </div>
+        <div className="download-btn">
+          <button className="btn">
+            <div className="trash-icon">
+              <img src="/download.png" alt="" />
+            </div>
+            <div className="label">
+              <p>Télécharger</p>
+            </div>
+          </button>
+        </div>
       </div>
     </article>
   );
