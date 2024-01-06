@@ -13,10 +13,28 @@
             color: $secondary-3;
             font-weight: 600;
             margin-bottom: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
     }
 
     .size {
+        margin-top: 13px;
+
+        h6 {
+            color: $secondary-2;
+            font-weight: 500;
+            margin-bottom: 0;
+
+            span {
+                font-weight: 700;
+            }
+        }
+    }
+
+    .extension {
         margin-top: 13px;
 
         h6 {
@@ -45,23 +63,23 @@
         }
     }
 
-    .delete-btn{
+    .delete-btn {
         margin-top: 28px;
-        
-        .btn{
+
+        .btn {
             display: flex;
             align-items: center;
             gap: 12px;
             border-radius: 32px;
             padding: 6px 25px;
 
-            p{
+            p {
                 margin-bottom: 0;
                 font-weight: 600;
                 font-size: 15px;
             }
 
-            img{
+            img {
                 position: relative;
                 top: -2px;
             }
