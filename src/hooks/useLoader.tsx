@@ -3,6 +3,7 @@ import React, { ReactNode, createContext, useContext, useState } from "react";
 export interface ILoaderContext {
   loading: boolean;
   handleLoad: () => void;
+  handleStartLoad: () => void;
 }
 
 interface ILoaderProvider {
@@ -18,11 +19,16 @@ export const LoaderProvider: React.FC<ILoaderProvider> = ({ children }) => {
     setLoading(false);
   };
 
+  const handleStartLoad = () => {
+    setLoading(true);
+  };
+
   return (
     <LoaderContext.Provider
       value={{
         loading,
         handleLoad,
+        handleStartLoad
       }}
     >
       {children}

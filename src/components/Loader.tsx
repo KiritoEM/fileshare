@@ -5,7 +5,7 @@ const Loader = (): JSX.Element => {
         <div className="spinner"></div>
 
         <div className="title mt-3">
-          <h1> Veuillez patienter...</h1>
+          <h1> Veuillez patienter pendant l' envoi des données ...</h1>
         </div>
       </div>
     </div>

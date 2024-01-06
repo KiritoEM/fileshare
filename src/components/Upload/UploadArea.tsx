@@ -4,18 +4,35 @@ import { useFile } from "../../hooks/useFile";
 import uploadFileHelper from "../../helper/uploadFile.helper";
 ("../../helper/uploadFile.helper");
 import getEmail from "../../util/getEmail";
+import { useLoader } from "../../hooks/useLoader";
 
 const UploadArea = (): JSX.Element => {
   const [clicked, setCLicked] = useState<boolean>(false);
   const { file, fileChange } = useFile();
   const { formatFileSize, verifySize, uploadFile } = uploadFileHelper();
   const userEmail = getEmail();
+  const { handleStartLoad, handleLoad } = useLoader();
 
   useEffect(() => {
     if (file) {
       setCLicked(true);
     }
   }, [file]);
+
+  const handleUpload = async () => {
+    if (file) {
+      handleStartLoad();
+
+      try {
+        await uploadFile(file, userEmail);
+      } catch (error) {
+        console.error("Upload failed", error);
+      } finally {
+        handleLoad();
+        window.location.reload();
+      }
+    }
+  };
 
   return (
     <section id="upload-area">
@@ -60,16 +77,7 @@ const UploadArea = (): JSX.Element => {
         </div>
       ) : (
         <div className="button">
-          <button
-            className="btn"
-            onClick={() => {
-              if (file) {
-                uploadFile(file, userEmail).then(() => {
-                  window.location.reload();
-                });
-              }
-            }}
-          >
+          <button className="btn" onClick={handleUpload}>
             Uploader le fichier
           </button>
         </div>
