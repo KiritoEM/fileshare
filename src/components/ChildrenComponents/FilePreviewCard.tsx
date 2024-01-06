@@ -1,11 +1,16 @@
-const FilePreviewCard = (): JSX.Element => {
+interface IfileInfo {
+  name: string;
+  size: number;
+}
+
+const FilePreviewCard: React.FC<IfileInfo> = ({ name, size }): JSX.Element => {
   return (
     <div className="file-preview">
       <div className="file-name">
-        <p>Darling in the Franxx.mp4</p>
+        <p>{name}</p>
       </div>
       <div className="file-size">
-         <p>25 mo</p>
+        <p>{size}</p>
       </div>
     </div>
   );

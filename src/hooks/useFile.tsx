@@ -14,6 +14,10 @@ const FileContext = createContext<IFileContext | null>(null);
 export const FileProvider: React.FC<IFileProvider> = ({ children }) => {
   const [file, setFile] = useState<File | null>(null);
 
+  if (file) {
+    console.log("fichier uploadé :", file);
+  }
+
   const fileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       setFile(e.target.files[0]);
@@ -34,11 +38,11 @@ export const FileProvider: React.FC<IFileProvider> = ({ children }) => {
 
 //hooks exportation
 // eslint-disable-next-line react-refresh/only-export-components
-export const useAuth = () => {
+export const useFile = () => {
   const context = useContext(FileContext);
 
   if (!context) {
-    throw new Error("useFirebase must be used within an AppProvider");
+    throw new Error("useFile must be used within an AppProvider");
   }
   return context;
 };
