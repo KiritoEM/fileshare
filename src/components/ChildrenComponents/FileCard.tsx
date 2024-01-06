@@ -1,4 +1,6 @@
 import React from "react";
+import downloadfilehelper from "../../helper/downloadFile.helper";
+import deleteFileHelper from "../../helper/deleteFile.helper";
 
 interface IfileInfo {
   name: string;
@@ -11,7 +13,10 @@ const FileCard: React.FC<IfileInfo> = ({
   name,
   size,
   extension,
+  url,
 }): JSX.Element => {
+  const { downloadFile } = downloadfilehelper();
+  const { deleteFile } = deleteFileHelper();
   return (
     <article className="file-card">
       <div className="title">
@@ -28,7 +33,7 @@ const FileCard: React.FC<IfileInfo> = ({
         </h6>
       </div>
       <div className="buttons">
-        <div className="delete-btn">
+        <div className="delete-btn" onClick={() => deleteFile(name)}>
           <button className="btn btn-danger">
             <div className="trash-icon">
               <img src="/trash.png" alt="" />
@@ -39,7 +44,7 @@ const FileCard: React.FC<IfileInfo> = ({
           </button>
         </div>
         <div className="download-btn">
-          <button className="btn">
+          <button className="btn" onClick={() => downloadFile(name, url)}>
             <div className="trash-icon">
               <img src="/download.png" alt="" />
             </div>

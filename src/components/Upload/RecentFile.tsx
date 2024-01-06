@@ -25,7 +25,7 @@ const RecentFile = (): JSX.Element => {
                 name={item.name}
                 size={formatFileSize(item.size)}
                 extension={getFileExtension(item.name)}
-                url=""
+                url={item.url}
               />
             </div>
           ))}
