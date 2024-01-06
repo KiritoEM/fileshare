@@ -14,11 +14,6 @@ const FileCard = (): JSX.Element => {
           <span>Extension :</span> mp4
         </h6>
       </div>
-      <div className="date">
-        <p>
-          <span>Date de création :</span> 03 Janvier 2023
-        </p>
-      </div>
       <div className="buttons">
         <div className="delete-btn">
           <button className="btn btn-danger">

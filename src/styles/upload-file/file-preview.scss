@@ -1,0 +1,40 @@
+.file-preview__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .file-preview {
+        width: 40%;
+        background-color: #f3efef;
+        border-radius: 10px;
+        height: max-content;
+        padding-top: 18px;
+        padding-bottom: 18px;
+        padding-left: 25px;
+        padding-right: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        .file-name {
+            p {
+                font-weight: 600;
+                color: $secondary-1;
+            }
+        }
+
+        .file-size {
+            margin-top: 7px;
+
+            p {
+                font-weight: 400;
+                color: $secondary-2;
+            }
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+}

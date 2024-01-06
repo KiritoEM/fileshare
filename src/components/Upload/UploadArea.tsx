@@ -1,15 +1,25 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
+import FilePreviewCard from "../ChildrenComponents/FilePreviewCard";
 
 const UploadArea = (): JSX.Element => {
   const [clicked, setCLicked] = useState<boolean>(false);
   return (
     <section id="upload-area">
-      <div className="cloud-img">
-        <img src="/cloud.png" alt="" />
-      </div>
-      <div className="label">
-        <p>Veuillez séléctionnez un fichier à sauvegarder</p>
-      </div>
+      {clicked === false ? (
+        <Fragment>
+          <div className="cloud-img">
+            <img src="/cloud.png" alt="" />
+          </div>
+          <div className="label">
+            <p>Veuillez séléctionnez un fichier à sauvegarder</p>
+          </div>
+        </Fragment>
+      ) : (
+        <div className="file-preview__container">
+          <FilePreviewCard />
+        </div>
+      )}
+
       {clicked === false ? (
         <div className="button" onClick={() => setCLicked(true)}>
           <button className="btn">Séléctionner un fichier</button>
