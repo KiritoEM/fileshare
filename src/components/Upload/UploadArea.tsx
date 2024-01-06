@@ -1,10 +1,13 @@
 import { Fragment, useEffect, useState } from "react";
 import FilePreviewCard from "../ChildrenComponents/FilePreviewCard";
 import { useFile } from "../../hooks/useFile";
+import uploadFileHelper from "../../helper/uploadFile.helper";
+("../../helper/uploadFile.helper");
 
 const UploadArea = (): JSX.Element => {
   const [clicked, setCLicked] = useState<boolean>(false);
-  const { file, fileChange, formatFileSize, verifySize } = useFile();
+  const { file, fileChange } = useFile();
+  const { formatFileSize, verifySize, uploadFile } = uploadFileHelper();
 
   useEffect(() => {
     if (file) {
@@ -53,7 +56,12 @@ const UploadArea = (): JSX.Element => {
         </div>
       ) : (
         <div className="button">
-          <button className="btn">Uploader le fichier</button>
+          <button
+            className="btn"
+            onClick={() => (file ? uploadFile(file) : "")}
+          >
+            Uploader le fichier
+          </button>
         </div>
       )}
     </section>
