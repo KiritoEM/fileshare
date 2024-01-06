@@ -16,24 +16,30 @@ const RecentFile = (): JSX.Element => {
         </div>
         <div className="line_after"></div>
       </div>
-      <div id="recent-file__container">
-        <div className="row gx-4 gy-4">
-          {fileArray.map((item, fileIndex) => (
-            <div className="col-4" key={fileIndex}>
-              <FileCard
-                key={fileIndex}
-                name={item.name}
-                size={formatFileSize(item.size)}
-                extension={getFileExtension(item.name)}
-                url={item.url}
-              />
-            </div>
-          ))}
+      {fileArray.length === 0 ? (
+        <h5 className="mt-3">Aucun fichier , veuillez en ajouter</h5>
+      ) : (
+        <div id="recent-file__container">
+          <div className="row gx-4 gy-4">
+            {fileArray.map((item, fileIndex) => (
+              <div className="col-4" key={fileIndex}>
+                <FileCard
+                  key={fileIndex}
+                  name={item.name}
+                  size={formatFileSize(item.size)}
+                  extension={getFileExtension(item.name)}
+                  url={item.url}
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-      <div className="all-files">
-        <button className="btn">Tous les fichiers</button>
-      </div>
+      )}
+      {fileArray.length !== 0 && (
+        <div className="all-files">
+          <button className="btn">Tous les fichiers</button>
+        </div>
+      )}
     </section>
   );
 };
