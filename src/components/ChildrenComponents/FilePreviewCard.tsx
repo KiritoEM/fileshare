@@ -1,6 +1,6 @@
 interface IfileInfo {
   name: string;
-  size: number;
+  size: string;
 }
 
 const FilePreviewCard: React.FC<IfileInfo> = ({ name, size }): JSX.Element => {

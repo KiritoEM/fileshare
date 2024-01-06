@@ -4,7 +4,7 @@ import { useFile } from "../../hooks/useFile";
 
 const UploadArea = (): JSX.Element => {
   const [clicked, setCLicked] = useState<boolean>(false);
-  const { file, fileChange } = useFile();
+  const { file, fileChange, formatFileSize, verifySize } = useFile();
 
   useEffect(() => {
     if (file) {
@@ -25,7 +25,16 @@ const UploadArea = (): JSX.Element => {
         </Fragment>
       ) : (
         <div className="file-preview__container">
-          {file && <FilePreviewCard name={file.name} size={file.size} />}
+          {file && (
+            <Fragment>
+              {verifySize(file.size) === true && (
+                <FilePreviewCard
+                  name={file.name}
+                  size={formatFileSize(file.size)}
+                />
+              )}
+            </Fragment>
+          )}
         </div>
       )}
 
