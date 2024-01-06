@@ -1,6 +1,6 @@
-const RecentFileCard = (): JSX.Element => {
+const FileCard = (): JSX.Element => {
   return (
-    <article className="recentfile-card">
+    <article className="file-card">
       <div className="title">
         <h6>Darling in the Franxx.mp4</h6>
       </div>
@@ -28,4 +28,4 @@ const RecentFileCard = (): JSX.Element => {
   );
 };
 
-export default RecentFileCard;
+export default FileCard;

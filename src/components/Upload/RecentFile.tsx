@@ -1,4 +1,4 @@
-import RecentFileCard from "../ChildrenComponents/RecentFileCard";
+import FileCard from "../ChildrenComponents/FileCard";
 
 const RecentFile = (): JSX.Element => {
   return (
@@ -12,23 +12,21 @@ const RecentFile = (): JSX.Element => {
       <div id="recent-file__container">
         <div className="row gx-4 gy-4">
           <div className="col-4">
-            <RecentFileCard />
+            <FileCard />
           </div>
           <div className="col-4">
-            <RecentFileCard />
+            <FileCard />
           </div>
           <div className="col-4">
-            <RecentFileCard />
+            <FileCard />
           </div>
           <div className="col-4">
-            <RecentFileCard />
+            <FileCard />
           </div>
         </div>
       </div>
       <div className="all-files">
-        <button className="btn">
-           Tous les fichiers
-        </button>
+        <button className="btn">Tous les fichiers</button>
       </div>
     </section>
   );
