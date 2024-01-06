@@ -1,0 +1,38 @@
+#allFile-page {
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 3rem;
+    @include container;
+
+    &__content {
+        margin-top: 2.6rem;
+
+        .section-header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 12px;
+
+            .title {
+                h4 {
+                    color: $primary;
+                    font-weight: 600;
+                }
+            }
+
+            .line_after {
+                width: 37px;
+                height: 3px;
+                background-color: $primary;
+                margin-top: -3px;
+            }
+
+        }
+
+        .section-container{
+            margin-top: 25px;
+        }
+    }
+
+
+}

@@ -1,6 +1,8 @@
 import navbar from "../../helper/data/navbar";
+import { useAuth } from "../../hooks/useAuth";
 
 const AppHeader = (): JSX.Element => {
+  const { setLogout } = useAuth();
   const { navItems } = navbar();
   return (
     <section className="upload-header">
@@ -21,8 +23,8 @@ const AppHeader = (): JSX.Element => {
           ))}
         </ul>
       </div>
-      <div className="button">
-        <button className="btn">Se déconnecter</button>
+      <div className="button" onClick={() => setLogout()}>
+        <a href="/"><button className="btn">Se déconnecter</button></a>
       </div>
     </section>
   );

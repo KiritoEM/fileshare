@@ -44,7 +44,13 @@ const FileCard: React.FC<IfileInfo> = ({
       </div>
       <div className="buttons">
         {currentAuthor === author && (
-          <div className="delete-btn" onClick={() => deleteFile(name)}>
+          <div
+            className="delete-btn"
+            onClick={() => {
+              window.location.reload();
+              deleteFile(name);
+            }}
+          >
             <button className="btn btn-danger">
               <div className="trash-icon">
                 <img src="/trash.png" alt="" />

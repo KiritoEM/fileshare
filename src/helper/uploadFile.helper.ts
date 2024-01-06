@@ -27,7 +27,7 @@ export default function uploadFileHelper() {
     const fileName = `${author}_${file.name}`;
 
     const fileRef = ref(fileStorage, `files_uploaded/${fileName}`);
-    uploadBytes(fileRef, file);
+    return uploadBytes(fileRef, file);
   };
 
   return { verifySize, formatFileSize, uploadFile };

@@ -13,6 +13,7 @@ import {
   getDownloadURL,
   getMetadata,
 } from "firebase/storage";
+import { useLoader } from "./useLoader";
 
 interface IfileData {
   name: string;
@@ -34,6 +35,7 @@ interface IFileProvider {
 const FileContext = createContext<IFileContext | null>(null);
 
 export const FileProvider: React.FC<IFileProvider> = ({ children }) => {
+  const { handleLoad } = useLoader();
   const [file, setFile] = useState<File | null>(null);
   const [fileArray, setFiles] = useState<IfileData[]>([]);
   const storage = getStorage();
@@ -63,6 +65,7 @@ export const FileProvider: React.FC<IFileProvider> = ({ children }) => {
       });
 
       const filesData = await Promise.all(filePromises);
+      handleLoad();
       setFiles(filesData);
     } catch (error) {
       console.error("Erreur lors de la récupération des fichiers :", error);

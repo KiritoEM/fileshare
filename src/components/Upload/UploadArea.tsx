@@ -52,7 +52,9 @@ const UploadArea = (): JSX.Element => {
             type="file"
             name=""
             id="file-upload"
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => fileChange(e)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              fileChange(e);
+            }}
             style={{ display: "none" }}
           />
         </div>
@@ -60,7 +62,13 @@ const UploadArea = (): JSX.Element => {
         <div className="button">
           <button
             className="btn"
-            onClick={() => (file ? uploadFile(file, userEmail) : "")}
+            onClick={() => {
+              if (file) {
+                uploadFile(file, userEmail).then(() => {
+                  window.location.reload();
+                });
+              }
+            }}
           >
             Uploader le fichier
           </button>
