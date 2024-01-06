@@ -1,6 +1,13 @@
 import FileCard from "../ChildrenComponents/FileCard";
+import { useFile } from "../../hooks/useFile";
+import uploadFileHelper from "../../helper/uploadFile.helper";
+import getExtension from "../../util/getExtension";
 
 const RecentFile = (): JSX.Element => {
+  const { fileArray } = useFile();
+  const { formatFileSize } = uploadFileHelper();
+  const { getFileExtension } = getExtension();
+
   return (
     <section id="recent-file">
       <div id="recent-file__header">
@@ -11,18 +18,17 @@ const RecentFile = (): JSX.Element => {
       </div>
       <div id="recent-file__container">
         <div className="row gx-4 gy-4">
-          <div className="col-4">
-            <FileCard />
-          </div>
-          <div className="col-4">
-            <FileCard />
-          </div>
-          <div className="col-4">
-            <FileCard />
-          </div>
-          <div className="col-4">
-            <FileCard />
-          </div>
+          {fileArray.map((item, fileIndex) => (
+            <div className="col-4" key={fileIndex}>
+              <FileCard
+                key={fileIndex}
+                name={item.name}
+                size={formatFileSize(item.size)}
+                extension={getFileExtension(item.name)}
+                url=""
+              />
+            </div>
+          ))}
         </div>
       </div>
       <div className="all-files">
