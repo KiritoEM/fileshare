@@ -3,7 +3,7 @@
 
 Ce projet est une application de partage de fichiers en ligne développée avec React JS, Vite JS, TypeScript, et Firebase pour le stockage des fichiers.
 
-## Installation
+## Installation et lancement de l' application
 
 1. Clonez le dépôt et installez les dépendances:
 
