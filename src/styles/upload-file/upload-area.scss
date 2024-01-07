@@ -1,12 +1,16 @@
 #upload-area {
-   width: 100%;
-   height: max-content;
-   border: 1px dashed $secondary-2;
+   @include container;
    margin-top: 2.6rem;
-   padding-top: 2.3rem;
-   padding-bottom: 3rem;
-   background-color: #fff;
-   border-radius: 17px;
+
+   &__container {
+      width: 100%;
+      height: max-content;
+      border: 1px dashed $secondary-2;
+      padding-top: 2.3rem;
+      padding-bottom: 3rem;
+      background-color: #fff;
+      border-radius: 17px;
+   }
 
    .cloud-img {
       text-align: center;

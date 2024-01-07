@@ -1,0 +1,11 @@
+.icon{
+    font-size: 22px;
+    color: $primary;
+    border: 1px solid $primary;
+    padding: 10px;
+
+    &:hover{
+        background-color: $primary;
+        color: #fff;
+    }
+}
