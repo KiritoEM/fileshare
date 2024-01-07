@@ -8,7 +8,7 @@ Ce projet est une application de partage de fichiers en ligne développée avec 
 1. Clonez le dépôt et installez les dépendances:
 
 ```bash
-git clone https[://github.com/votre-utilisateur/votre-projet.git](https://github.com/KiritoEM/fileshare-firebase.git)
+git clone https://github.com/KiritoEM/fileshare-firebase.git
 cd fileshare-firebase
 npm install
 ```
