@@ -11,7 +11,7 @@ const UploadArea = (): JSX.Element => {
   const { file, fileChange } = useFile();
   const { formatFileSize, verifySize, uploadFile } = uploadFileHelper();
   const userEmail = getEmail();
-  const { handleStartLoad, handleLoad } = useLoader();
+  const { handleStartUpload, handleStopUpload } = useLoader();
 
   useEffect(() => {
     if (file) {
@@ -21,14 +21,14 @@ const UploadArea = (): JSX.Element => {
 
   const handleUpload = async () => {
     if (file) {
-      handleStartLoad();
+      handleStartUpload();
 
       try {
         await uploadFile(file, userEmail);
       } catch (error) {
         console.error("Upload failed", error);
       } finally {
-        handleLoad();
+        handleStopUpload();
         window.location.reload();
       }
     }

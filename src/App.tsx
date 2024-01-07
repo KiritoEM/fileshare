@@ -7,11 +7,12 @@ import { useLoader } from "./hooks/useLoader";
 import { Fragment } from "react";
 
 const App = (): JSX.Element => {
-  const { loading } = useLoader();
+  const { loading , loadingUpload } = useLoader();
 
   return (
     <Fragment>
-      {loading ? <Loader /> : null}
+      {loading ? <Loader text="Chargement de la page en cours..." /> : null}
+      {loadingUpload ? <Loader text="Upload des fichiers en cours..." /> : null}
       <AppRoutes />
     </Fragment>
   );

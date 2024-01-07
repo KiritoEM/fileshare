@@ -2,8 +2,11 @@ import React, { ReactNode, createContext, useContext, useState } from "react";
 
 export interface ILoaderContext {
   loading: boolean;
+  loadingUpload: boolean;
   handleLoad: () => void;
   handleStartLoad: () => void;
+  handleStartUpload: () => void;
+  handleStopUpload: () => void;
 }
 
 interface ILoaderProvider {
@@ -14,6 +17,11 @@ const LoaderContext = createContext<ILoaderContext | null>(null);
 
 export const LoaderProvider: React.FC<ILoaderProvider> = ({ children }) => {
   const [loading, setLoading] = useState<boolean>(true);
+  const [loadingUpload, setUploading] = useState<boolean>(false);
+
+  if (loadingUpload) {
+    console.log(loadingUpload);
+  }
 
   const handleLoad = () => {
     setLoading(false);
@@ -23,12 +31,23 @@ export const LoaderProvider: React.FC<ILoaderProvider> = ({ children }) => {
     setLoading(true);
   };
 
+  const handleStartUpload = () => {
+    setUploading(true);
+  };
+
+  const handleStopUpload = () => {
+    setUploading(false);
+  };
+
   return (
     <LoaderContext.Provider
       value={{
         loading,
+        loadingUpload,
         handleLoad,
-        handleStartLoad
+        handleStartLoad,
+        handleStartUpload,
+        handleStopUpload,
       }}
     >
       {children}
