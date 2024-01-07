@@ -44,12 +44,16 @@
 
     .button {
         margin-top: 15px;
+        display: flex;
+        align-items: center;
 
         .btn {
             background-color: $primary;
             border-radius: 24px;
-            padding: 7px 29px;
+            padding: 9px 45px;
             font-weight: 600;
+            position: relative;
+            top: -2px;
             color: #fff;
         }
     }

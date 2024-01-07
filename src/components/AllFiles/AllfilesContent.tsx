@@ -16,7 +16,9 @@ const AllfilesContent = (): JSX.Element => {
         <div className="title">
           <h4>Fichiers récents dans le Cloud</h4>
         </div>
-        <div className="line_after"></div>
+        <div className="line_after">
+          <div className="line-container"></div>
+        </div>
       </div>
       {fileArray.length === 0 ? (
         <h5 className="mt-3 vide">Aucun fichier partagé pour le moment</h5>
