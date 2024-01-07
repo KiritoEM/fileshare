@@ -4,7 +4,7 @@
     @include container;
 
     @include screen(small) {
-        margin-top: 3rem;
+        margin-top: 3.6rem;
     }
 
     &__header {
@@ -25,14 +25,25 @@
         }
 
         .line_after {
-            width: 37px;
-            height: 3px;
-            background-color: $primary;
-            margin-top: -3px;
-
             @include screen(small) {
-                width: 48px;
+                width: 100%;
             }
+
+            .line-container {
+                width: 37px;
+                height: 3px;
+                background-color: $primary;
+                margin-top: -3px;
+
+                @include screen(small) {
+                    width: 48px;
+                    margin-top: -5px;
+                    margin-left: 7px;
+
+                }
+            }
+
+
         }
     }
 
@@ -41,13 +52,17 @@
         margin-top: 25px;
 
         @include screen(small) {
-            margin-top: 59px;
+            margin-top: 40px;
         }
     }
 
     .all-files {
         margin-top: 50px;
         text-align: center;
+
+        @include screen(small) {
+            margin-top: 40px;
+        }
 
         .btn {
             background-color: $primary;

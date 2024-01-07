@@ -6,6 +6,10 @@
       margin-top: 9rem;
    }
 
+   @include screen(medium) {
+      margin-top: 9rem;
+   }
+
    &__container {
       width: 100%;
       height: max-content;

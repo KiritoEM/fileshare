@@ -17,7 +17,9 @@ const RecentFile = (): JSX.Element => {
         <div className="title">
           <h4>Fichiers récents dans le Cloud</h4>
         </div>
-        <div className="line_after"></div>
+        <div className="line_after">
+           <div className="line-container"></div>
+        </div>
       </div>
       {displayedFiles.length === 0 ? (
         <h5 className="mt-3 vide">Aucun fichier partagé pour le moment</h5>
@@ -25,7 +27,7 @@ const RecentFile = (): JSX.Element => {
         <div id="recent-file__container">
           <div className="row gx-4 gy-4">
             {displayedFiles.map((item, fileIndex) => (
-              <div className="col-md-4" key={fileIndex}>
+              <div className="col-md-6 col-lg-4" key={fileIndex}>
                 <FileCard
                   key={fileIndex}
                   name={item.name}

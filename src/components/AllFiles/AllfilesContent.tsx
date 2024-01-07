@@ -24,7 +24,7 @@ const AllfilesContent = (): JSX.Element => {
         <div className="section-container">
           <div className="row gx-4 gy-4">
             {fileArray.map((item, fileIndex) => (
-              <div className="col-md-4" key={fileIndex}>
+              <div className="col-md-6 col-lg-4" key={fileIndex}>
                 <FileCard
                   key={fileIndex}
                   name={item.name}
