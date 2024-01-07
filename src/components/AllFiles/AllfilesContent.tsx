@@ -14,7 +14,7 @@ const AllfilesContent = (): JSX.Element => {
     <section id="allFile-page__content">
       <div className="section-header">
         <div className="title">
-          <h4>Fichiers récents dans le Cloud</h4>
+          <h4>Tous les fichiers</h4>
         </div>
         <div className="line_after">
           <div className="line-container"></div>
