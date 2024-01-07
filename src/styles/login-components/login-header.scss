@@ -5,6 +5,11 @@
 
     .lottie {
         width: 102px;
+
+        @include screen(small) {
+            width: 72px;       
+            object-fit: contain;
+        }
     }
 
     .title {
@@ -16,6 +21,12 @@
             color: $secondary-1;
             font-size: 2.24em;
             font-weight: 600;
+
+            @include screen(small) {
+                font-size: 24px;
+                margin-top: 1.7rem;
+            }
+
 
             span {
                 color: $primary;

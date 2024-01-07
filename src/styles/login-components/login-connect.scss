@@ -6,6 +6,13 @@
     padding-left: 27%;
     padding-right: 27%;
 
+    @include screen(small) {
+        padding-left: 8%;
+        padding-right: 8%;
+        margin-top: 7px;
+    }
+
+
     .btn {
         display: flex;
         align-items: center;
@@ -15,11 +22,22 @@
         padding-top: 12px;
         padding-bottom: 12px;
 
+        @include screen(small) {
+            gap: 8px;
+            font-size: 15px;
+        }
+
+
         .img {
 
             img {
                 width: 33px;
                 object-fit: contain;
+
+                @include screen(small) {
+                    width: 29.6px;
+                }
+   
             }
         }
     }
