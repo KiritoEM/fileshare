@@ -1,4 +1,4 @@
-[# FileShare
+# FileShare
 ## React JS + Typescript JS + Vite JS
 
 Ce projet est une application de partage de fichiers en ligne développée avec React JS, Vite JS, TypeScript, et Firebase pour le stockage des fichiers.
