@@ -3,11 +3,19 @@
     width: 100%;
     @include container;
 
+    @include screen(small) {
+        margin-top: 3rem;
+    }
+
     &__header {
         display: flex;
         flex-direction: row;
         align-items: center;
         gap: 12px;
+
+        @include screen(small) {
+            flex-direction: column;
+        }
 
         .title {
             h4 {
@@ -21,12 +29,20 @@
             height: 3px;
             background-color: $primary;
             margin-top: -3px;
+
+            @include screen(small) {
+                width: 48px;
+            }
         }
     }
 
     &__container {
         width: 100%;
         margin-top: 25px;
+
+        @include screen(small) {
+            margin-top: 59px;
+        }
     }
 
     .all-files {
@@ -39,6 +55,11 @@
             border-radius: 32px;
             font-weight: 600;
             padding: 8.6px 60px;
+
+            @include screen(small) {
+                width: 90%;
+                font-size: 14px;
+            }
         }
     }
 

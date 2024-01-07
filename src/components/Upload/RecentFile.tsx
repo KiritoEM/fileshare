@@ -25,7 +25,7 @@ const RecentFile = (): JSX.Element => {
         <div id="recent-file__container">
           <div className="row gx-4 gy-4">
             {displayedFiles.map((item, fileIndex) => (
-              <div className="col-4" key={fileIndex}>
+              <div className="col-md-4" key={fileIndex}>
                 <FileCard
                   key={fileIndex}
                   name={item.name}

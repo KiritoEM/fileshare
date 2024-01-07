@@ -2,6 +2,10 @@
    @include container;
    margin-top: 2.6rem;
 
+   @include screen(small) {
+      margin-top: 9rem;
+   }
+
    &__container {
       width: 100%;
       height: max-content;
@@ -10,6 +14,11 @@
       padding-bottom: 3rem;
       background-color: #fff;
       border-radius: 17px;
+
+      @include screen(small) {
+         padding-top: 2rem;
+         padding-bottom: 2rem;
+      }
    }
 
    .cloud-img {
@@ -17,6 +26,10 @@
 
       img {
          width: 95px;
+
+         @include screen(small) {
+            width: 75px;
+         }
       }
    }
 
@@ -40,6 +53,11 @@
          border-radius: 32px;
          font-weight: 600;
          padding: 8px 46px;
+
+         @include screen(small) {
+            width: 90%;
+            font-size: 14px;
+         }
       }
    }
 }
