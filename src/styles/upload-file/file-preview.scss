@@ -4,7 +4,7 @@
     justify-content: center;
 
     .file-preview {
-        width: 40%;
+        width: 41.4%;
         background-color: #f3efef;
         border-radius: 10px;
         height: max-content;
@@ -16,6 +16,14 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
+
+        @include screen(small) {
+            width: 87%;
+        }
+
+        @include screen(medium) {
+            width: 73%;
+        }
 
         .file-name {
             p {
