@@ -9,97 +9,91 @@
 
     @include screen(small) {
         padding: 20px;
-      }
-
-    .title {
-        width: 100%;
-
-        h6 {
-            color: $secondary-3;
-            font-weight: 700;
-            margin-bottom: 0;
-            display: -webkit-box;
-            -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-
-            @include screen(small) {
-                font-size: 15.4px;
-                display: flex;
-                width: 100%;
-            }
-        }
     }
 
-    .size {
-        margin-top: 13px;
+    .file-header {
+        height: 7.95rem;
 
-        h6 {
-            color: $secondary-2;
-            font-weight: 500;
-            margin-bottom: 0;
+        @include screen(small) {
+            height: max-content;
+        }
 
-            @include screen(small) {
-                font-size: 15.4px;
-            }
 
-            span {
+        .title {
+            width: 100%;
+
+            h6 {
+                color: $secondary-3;
                 font-weight: 700;
+                margin-bottom: 0;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+
+                @include screen(small) {
+                    font-size: 15.4px;
+                    display: flex;
+                    width: 100%;
+                }
             }
         }
-    }
 
-    .extension {
-        margin-top: 13px;
+        .size {
+            margin-top: 13px;
 
-        h6 {
-            color: $secondary-2;
-            font-weight: 500;
-            margin-bottom: 0;
+            h6 {
+                color: $secondary-2;
+                font-weight: 500;
+                margin-bottom: 0;
 
-            @include screen(small) {
-                font-size: 15.4px;
-            }
+                @include screen(small) {
+                    font-size: 15.4px;
+                }
 
-            span {
-                font-weight: 700;
-            }
-        }
-    }
-
-    .author {
-        margin-top: 13px;
-
-        h6 {
-            color: $primary;
-            font-weight: 500;
-            margin-bottom: 0;
-            display: -webkit-box;
-            -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-
-            @include screen(small) {
-                font-size: 15.4px;
-            }
-
-            span {
-                font-weight: 700;
+                span {
+                    font-weight: 700;
+                }
             }
         }
-    }
 
-    .date {
-        margin-top: 11px;
+        .extension {
+            margin-top: 13px;
 
-        p {
-            color: $primary;
-            margin-bottom: 0;
-            font-weight: 500;
-            margin-bottom: 0;
+            h6 {
+                color: $secondary-2;
+                font-weight: 500;
+                margin-bottom: 0;
 
-            span {
-                font-weight: 700;
+                @include screen(small) {
+                    font-size: 15.4px;
+                }
+
+                span {
+                    font-weight: 700;
+                }
+            }
+        }
+
+        .author {
+            margin-top: 13px;
+
+            h6 {
+                color: $primary;
+                font-weight: 500;
+                margin-bottom: 0;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+
+                @include screen(small) {
+                    font-size: 15.4px;
+                }
+
+                span {
+                    font-weight: 700;
+                }
             }
         }
     }

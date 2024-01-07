@@ -24,23 +24,25 @@ const FileCard: React.FC<IfileInfo> = ({
   const currentAuthor = userEmail && userEmail.split("@")[0];
   return (
     <article className="file-card">
-      <div className="title">
-        <h6>{name}</h6>
-      </div>
-      <div className="size">
-        <h6>
-          <span>Taille :</span> {size}
-        </h6>
-      </div>
-      <div className="extension">
-        <h6>
-          <span>Extension :</span> .{extension}
-        </h6>
-      </div>
-      <div className="author">
-        <h6>
-          <span>Auteur :</span> {author}
-        </h6>
+      <div className="file-header">
+        <div className="title">
+          <h6>{name}</h6>
+        </div>
+        <div className="size">
+          <h6>
+            <span>Taille :</span> {size}
+          </h6>
+        </div>
+        <div className="extension">
+          <h6>
+            <span>Extension :</span> .{extension}
+          </h6>
+        </div>
+        <div className="author">
+          <h6>
+            <span>Auteur :</span> {author}
+          </h6>
+        </div>
       </div>
       <div className="buttons">
         {currentAuthor === author && (
